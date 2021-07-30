@@ -10,7 +10,6 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var buttonTimeToGive: UIButton!
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
 
         print(dateFormatter.string(from: dt))
         print(dt)
-        print(datePicker.date)
+        
         
         
 
