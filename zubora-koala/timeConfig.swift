@@ -21,7 +21,7 @@ class timeConfigController: UIViewController {
         //datepicker上のtoolbarのdoneボタン
         pickerToolBar = UIToolbar()
         pickerToolBar.sizeToFit()
-        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: "doneBtn")
+        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .done, target: self, action: #selector(doneBtn))
         pickerToolBar.items = [toolBarBtn]
         fieldTimeConf.inputAccessoryView = pickerToolBar
         
@@ -32,19 +32,19 @@ class timeConfigController: UIViewController {
         let datePickerView:UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.time
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), for: UIControl.Event.valueChanged)
+        datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
             
     }
     
     //datepickerが選択されたらtextfieldに表示
-    func datePickerValueChanged(sender:UIDatePicker) {
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat  = "HH:mm";
         fieldTimeConf.text = dateFormatter.string(from: sender.date)
     }
     
     //toolbarのdoneボタン
-    func doneBtn(){
+    @objc func doneBtn(){
         fieldTimeConf.resignFirstResponder()
     }
 }
