@@ -10,6 +10,8 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var buttonTimeToGive: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -19,6 +21,13 @@ class ViewController: UIViewController {
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMMMdHms", options: 0, locale: Locale(identifier: "ja_JP"))
 
         print(dateFormatter.string(from: dt))
+        print(dt)
+        
+        let dtFrom = (timeIntervalSinceNow: )
+
+        if true {
+            buttonTimeToGive.isHidden = true
+        }
         
     }
 
