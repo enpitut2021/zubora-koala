@@ -38,9 +38,13 @@ class timeConfigController: UIViewController {
     
     //datepickerが選択されたらtextfieldに表示
     func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat  = "yyyy/MM/dd";
-        birthday.text = dateFormatter.stringFromDate(sender.date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "HH:mm";
+        fieldTimeConf.text = dateFormatter.string(from: sender.date)
     }
     
+    //toolbarのdoneボタン
+    func doneBtn(){
+        fieldTimeConf.resignFirstResponder()
+    }
 }
