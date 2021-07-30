@@ -10,7 +10,6 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var buttonTimeToGive: UIButton!
     
     override func viewDidLoad() {
@@ -23,8 +22,6 @@ class ViewController: UIViewController {
 
         print(dateFormatter.string(from: dt))
         print(dt)
-        print(datePicker.date)
-        
         
 
         if true {
@@ -45,10 +42,12 @@ class ViewController: UIViewController {
         
     }
 
-
     @IBAction func clickButton(_ sender: Any) {
         let view = UIHostingController(rootView: ContentView())
         self.present(view, animated: true, completion: nil)
     }
+
+
+
 }
 
