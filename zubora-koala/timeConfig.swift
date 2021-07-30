@@ -21,18 +21,18 @@ class timeConfigController: UIViewController {
         //datepicker上のtoolbarのdoneボタン
         pickerToolBar = UIToolbar()
         pickerToolBar.sizeToFit()
-        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .done, target: self, action: #selector(doneBtn))
+        let toolBarBtn = UIBarButtonItem(title: "DONE", style: .plain, target: self, action: #selector(doneBtn))
         pickerToolBar.items = [toolBarBtn]
         fieldTimeConf.inputAccessoryView = pickerToolBar
         
     }
     
     
-    @IBAction func textFieldEditing(_ sender: UITextField) {
+    @IBAction func textFieldEditing(_ textField: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.time
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
+        textField.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
             
     }
     
