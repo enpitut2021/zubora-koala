@@ -10,17 +10,16 @@ import SwiftUI
 
 class ViewController: UIViewController {
     
-    let dt = Date()
-    let dateFormatter = DateFormatter()
-
-    dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMMMdHms", options: 0, locale: Locale(identifier: "ja_JP"))
-
-    print(dateFormatter.string(from: dt))
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let dt = Date()
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMMMdHms", options: 0, locale: Locale(identifier: "ja_JP"))
+
+        print(dateFormatter.string(from: dt))
+        
     }
 
 
