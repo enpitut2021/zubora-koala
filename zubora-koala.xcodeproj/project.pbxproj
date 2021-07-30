@@ -14,6 +14,7 @@
 		527F8E7F26B2C006003D7D83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527F8E7E26B2C006003D7D83 /* Assets.xcassets */; };
 		527F8E8226B2C006003D7D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527F8E8026B2C006003D7D83 /* LaunchScreen.storyboard */; };
 		5292AA5B26B2CA980020F8C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292AA5A26B2CA980020F8C2 /* ContentView.swift */; };
+		5292AA6026B3A2A50020F8C2 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5292AA5F26B3A2A50020F8C2 /* test.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		527F8E8126B2C006003D7D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527F8E8326B2C006003D7D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5292AA5A26B2CA980020F8C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5292AA5F26B3A2A50020F8C2 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				527F8E7926B2C005003D7D83 /* ViewController.swift */,
 				5292AA5A26B2CA980020F8C2 /* ContentView.swift */,
 				527F8E7B26B2C005003D7D83 /* Main.storyboard */,
+				5292AA5F26B3A2A50020F8C2 /* test.storyboard */,
 				527F8E7E26B2C006003D7D83 /* Assets.xcassets */,
 				527F8E8026B2C006003D7D83 /* LaunchScreen.storyboard */,
 				527F8E8326B2C006003D7D83 /* Info.plist */,
@@ -129,6 +132,7 @@
 			files = (
 				527F8E8226B2C006003D7D83 /* LaunchScreen.storyboard in Resources */,
 				527F8E7F26B2C006003D7D83 /* Assets.xcassets in Resources */,
+				5292AA6026B3A2A50020F8C2 /* test.storyboard in Resources */,
 				527F8E7D26B2C005003D7D83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
