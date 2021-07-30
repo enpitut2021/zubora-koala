@@ -11,6 +11,8 @@ import SwiftUI
 class ViewController: UIViewController {
     
     @IBOutlet weak var buttonTimeToGive: UIButton!
+    @IBOutlet weak var koalaImage: UIImageView!
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,11 @@ class ViewController: UIViewController {
         } else {
             print("範囲外です")
             buttonTimeToGive.isHidden = true
+            let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+            if !flag {
+                image = UIImage(named: "angry")
+                koalaImage.image = image
+            }
         }
         
     }

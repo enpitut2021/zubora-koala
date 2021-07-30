@@ -22,7 +22,7 @@ struct ContentView: View {
                 self.buttonText = "ユーカリをあげました"
                 self.imageName = "Smiling_Koala-1"
                 UserDefaults.standard.set(true, forKey: "isWaterGiven")
-                print(UserDefaults.standard.bool(forKey: "isGiven"))
+                print(UserDefaults.standard.bool(forKey: "isWaterGiven"))
                 
             }){
                 Text(self.buttonText)
