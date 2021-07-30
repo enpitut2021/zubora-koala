@@ -33,8 +33,10 @@ class ViewController: UIViewController {
         }
 
         let time1 = "\(dateFormatter.string(from: dt))"
-        let start = "13:10:00"
-        let end = "13:30:00"
+        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "13:00:00")"
+        //let start = "16:59:00"
+        print(start)
+        let end = "23:59:00"
 
         if start <= time1 && time1 <= end {
             print("範囲内です")
