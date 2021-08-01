@@ -22,28 +22,26 @@ class ViewController: UIViewController {
 
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm:ss", options: 0, locale: Locale(identifier: "ja_JP"))
 
-        print(dateFormatter.string(from: dt))
-        print(dt)
+        //print(dateFormatter.string(from: dt))
+        //print(dt)
         
         
         
-
-        if true {
-            buttonTimeToGive.isHidden = true
-        }
 
         let time1 = "\(dateFormatter.string(from: dt))"
-        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "13:00:00")"
-        //let start = "16:59:00"
+        print(time1)
+        //let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
+        let start = "08:45:00"
         print(start)
         let end = "23:59:00"
+        print(end)
 
         if start <= time1 && time1 <= end {
             print("範囲内です")
             buttonTimeToGive.isHidden = false
         } else {
             print("範囲外です")
-            buttonTimeToGive.isHidden = true
+            buttonTimeToGive.isHidden = false
             let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
             if !flag {
                 image = UIImage(named: "angry")

@@ -14,9 +14,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Hi!, I'm Koala")
-            Image(self.imageName)
-                .resizable()
-                .scaledToFit()
+            
+            LottieView(name: "koala-smiling", loopMode: .loop)
+                .frame(width: 250, height: 250)
             
             Button(action: {
                 self.buttonText = "ユーカリをあげました"
