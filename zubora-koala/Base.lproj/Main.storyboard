@@ -29,11 +29,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-bd-DJu">
-                                <rect key="frame" x="184" y="540" width="46" height="30"/>
+                                <rect key="frame" x="176" y="540" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="時間設定"/>
                                 <connections>
                                     <segue destination="AhW-xJ-9cB" kind="show" id="31A-y9-mCs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCV-jG-BGI">
+                                <rect key="frame" x="153" y="654" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="アニメーション"/>
+                                <connections>
+                                    <segue destination="ydr-BG-FXL" kind="show" id="nqh-Qs-z4k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,6 +66,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyh-Po-IB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850" y="80"/>
+        </scene>
+        <!--Animation-->
+        <scene sceneID="euu-Sk-xh8">
+            <objects>
+                <viewController id="ydr-BG-FXL" customClass="animation" customModule="zubora_koala" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="30f-YC-ykD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Eh2-qL-f32"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1dx-Hj-5mK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jux-et-ZKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="577"/>
         </scene>
     </scenes>
     <resources>
