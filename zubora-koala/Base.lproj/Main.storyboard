@@ -28,14 +28,36 @@
                                     <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eit-3Q-sRf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-bd-DJu">
+                                <rect key="frame" x="184" y="540" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="AhW-xJ-9cB" kind="show" id="31A-y9-mCs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonTimeToGive" destination="5b2-68-mlb" id="AYM-jb-Ixt"/>
+                        <outlet property="koalaImage" destination="sM7-C2-iQe" id="3JB-hI-Ui1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23" y="115"/>
+        </scene>
+        <!--timeConfig-->
+        <scene sceneID="8kr-8b-XtD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="timeConfig" id="AhW-xJ-9cB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="888-GI-lRq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pyh-Po-IB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="80"/>
         </scene>
     </scenes>
     <resources>
