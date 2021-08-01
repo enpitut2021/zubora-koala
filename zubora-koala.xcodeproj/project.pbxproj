@@ -17,6 +17,7 @@
 		5292AA6E26B6A6350020F8C2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5292AA6D26B6A6350020F8C2 /* Lottie */; };
 		5292AA7626B6B7A70020F8C2 /* Assets.xcassets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292AA7526B6B7A70020F8C2 /* Assets.xcassets.xcassets */; };
 		5292AA7826B6B9D10020F8C2 /* koala-smiling.json in Resources */ = {isa = PBXBuildFile; fileRef = 5292AA7426B6B71C0020F8C2 /* koala-smiling.json */; };
+		52A7561B26B766A0002C219D /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7561A26B766A0002C219D /* LottieView.swift */; };
 		E0AAD7BD26B39B5B00C1DB29 /* timeConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0AAD7BC26B39B5B00C1DB29 /* timeConfig.storyboard */; };
 		E0AAD7C126B39D0400C1DB29 /* timeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AAD7C026B39D0400C1DB29 /* timeConfig.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		5292AA6A26B6A3D40020F8C2 /* animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animation.swift; sourceTree = "<group>"; };
 		5292AA7426B6B71C0020F8C2 /* koala-smiling.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "koala-smiling.json"; sourceTree = "<group>"; };
 		5292AA7526B6B7A70020F8C2 /* Assets.xcassets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets.xcassets; sourceTree = "<group>"; };
+		52A7561A26B766A0002C219D /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		E0AAD7BC26B39B5B00C1DB29 /* timeConfig.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = timeConfig.storyboard; sourceTree = "<group>"; };
 		E0AAD7C026B39D0400C1DB29 /* timeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				5292AA7526B6B7A70020F8C2 /* Assets.xcassets.xcassets */,
 				E0AAD7C026B39D0400C1DB29 /* timeConfig.swift */,
 				5292AA5A26B2CA980020F8C2 /* ContentView.swift */,
+				52A7561A26B766A0002C219D /* LottieView.swift */,
 				527F8E7B26B2C005003D7D83 /* Main.storyboard */,
 				E0AAD7BC26B39B5B00C1DB29 /* timeConfig.storyboard */,
 				5292AA6726B6A2900020F8C2 /* Resources */,
@@ -190,6 +193,7 @@
 				527F8E7626B2C005003D7D83 /* AppDelegate.swift in Sources */,
 				E0AAD7C126B39D0400C1DB29 /* timeConfig.swift in Sources */,
 				5292AA5B26B2CA980020F8C2 /* ContentView.swift in Sources */,
+				52A7561B26B766A0002C219D /* LottieView.swift in Sources */,
 				5292AA6B26B6A3D40020F8C2 /* animation.swift in Sources */,
 				527F8E7826B2C005003D7D83 /* SceneDelegate.swift in Sources */,
 			);
