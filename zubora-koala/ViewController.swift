@@ -18,11 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        5秒おきにタイマーテスト
+//        5秒おきにタイマーテストをします
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerTest), userInfo: nil, repeats: true)
         
         let now = Date()
         let dateFormatter = DateFormatter()
+        
 
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm:ss", options: 0, locale: Locale(identifier: "ja_JP"))
         
