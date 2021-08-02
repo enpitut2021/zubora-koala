@@ -87,17 +87,3 @@ class ViewController: UIViewController {
 
 }
 
-//タイマーテスト
-
-
-class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-    @objc func timerUpdate() {
-        print("update")
-    }
-}
