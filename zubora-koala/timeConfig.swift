@@ -15,20 +15,9 @@ class timeConfigController: UIViewController {
     // PickerOnly
     @IBOutlet weak var pickerConf: UIDatePicker!
     @IBAction func pickerChanged(_ sender: Any) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        //print(formatter.string(from: pickerConf.date))
+
     }
-  
-    private func loadDate(key: String) -> Date {
-        let value = UserDefaults.standard.object(forKey: key)
-        guard let date = value as? Date else {
-            // default return
-            return Date()
-        }
-        return date
-    }
-    
+      
     override func viewDidLoad() {
         super.viewDidLoad()
 //        1スタートタイムの値を初期値にする
