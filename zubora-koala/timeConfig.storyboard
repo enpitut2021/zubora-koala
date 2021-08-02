@@ -31,9 +31,9 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woC-Aw-Cfj">
-                                <rect key="frame" x="120" y="471" width="46" height="29"/>
+                                <rect key="frame" x="89" y="471" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="時刻を設定する"/>
                                 <connections>
                                     <action selector="clicked_button:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TiL-dL-tXa"/>
                                 </connections>
