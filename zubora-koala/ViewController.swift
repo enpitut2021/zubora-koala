@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         //var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
         //var yukariEatingTime: Timer!
         
-        let view = koalaEating()
+        let view = koalaEating(name: "eat_animation")
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
-            view.stop()
+            self.koalaEating(name: "koala-smiling")
         }
         //flag = true
     }
@@ -32,9 +32,9 @@ class ViewController: UIViewController {
 //        view.stop()
 //    }
     
-    func koalaEating() -> AnimationView{
+    func koalaEating(name: String) -> AnimationView{
         let view = AnimationView()
-            if  let path: String = Bundle.main.path(forResource: "eat_animation", ofType: "json")
+            if  let path: String = Bundle.main.path(forResource: name, ofType: "json")
             {
                         print(path)
                         view.animation = Animation.filepath(path)
