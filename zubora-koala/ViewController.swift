@@ -15,6 +15,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var koalaImage: UIImageView!
     var image: UIImage!
     
+    @IBOutlet weak var yukarieatButton: UIButton!
+    
+    @IBAction func yukariEat(_ sender: Any) {
+        var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+        let view = AnimationView()
+                if  let path: String = Bundle.main.path(forResource: "eat_animation", ofType: "json")
+                {
+                            print(path)
+                            view.animation = Animation.filepath(path)
+                            view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                            view.center = self.view.center
+                            view.loopMode = .loop
+                            self.view.addSubview(view)
+                            view.play()
+                        }
+        flag = true
+    }
+    
     
     private func loadDate(key: String) -> Date {
         let value = UserDefaults.standard.object(forKey: key)
@@ -41,13 +59,13 @@ class ViewController: UIViewController {
 //        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
         
         let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
-
-
         
         let start = loadDate(key: "start_time")
         print(start)
+        
         let end: Date = Date(timeInterval: 60*30, since: start)
         print(end)
+        
         
         if flag == true{
         let view = AnimationView()

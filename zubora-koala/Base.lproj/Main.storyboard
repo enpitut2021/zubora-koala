@@ -48,6 +48,14 @@
                                     <segue destination="ydr-BG-FXL" kind="show" id="nqh-Qs-z4k"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44H-Wk-kDi" userLabel="yukarieatB">
+                                <rect key="frame" x="146" y="483" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ユーカリをあげる"/>
+                                <connections>
+                                    <action selector="yukariEat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Muj-s5-wRy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,6 +63,7 @@
                     <connections>
                         <outlet property="buttonTimeToGive" destination="5b2-68-mlb" id="AYM-jb-Ixt"/>
                         <outlet property="koalaImage" destination="sM7-C2-iQe" id="3JB-hI-Ui1"/>
+                        <outlet property="yukarieatButton" destination="44H-Wk-kDi" id="nEI-U6-Xbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
