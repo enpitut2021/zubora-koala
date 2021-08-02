@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Lottie
 
 class ViewController: UIViewController {
     
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
         //print(dt)
         
         
-        
+        let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
 
         let time1 = "\(dateFormatter.string(from: dt))"
         print(time1)
@@ -35,6 +36,33 @@ class ViewController: UIViewController {
         print(start)
         let end = "23:59:00"
         print(end)
+        
+        if flag == true{
+        let view = AnimationView()
+                if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json")
+                {
+                            print(path)
+                            view.animation = Animation.filepath(path)
+                            view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                            view.center = self.view.center
+                            view.loopMode = .loop
+                            self.view.addSubview(view)
+                            view.play()
+                        }
+        }else{
+            let view = AnimationView()
+                    if  let path: String = Bundle.main.path(forResource: "51431-koala-wink", ofType: "json")
+                    {
+                                print(path)
+                                view.animation = Animation.filepath(path)
+                                view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                                view.center = self.view.center
+                                view.loopMode = .loop
+                                self.view.addSubview(view)
+                                view.play()
+                    }
+        }
+        
 
         if start <= time1 && time1 <= end {
             print("範囲内です")
@@ -42,7 +70,7 @@ class ViewController: UIViewController {
         } else {
             print("範囲外です")
             buttonTimeToGive.isHidden = false
-            let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+           
             if !flag {
                 image = UIImage(named: "angry")
                 koalaImage.image = image
@@ -55,6 +83,7 @@ class ViewController: UIViewController {
         let view = UIHostingController(rootView: ContentView())
         self.present(view, animated: true, completion: nil)
     }
+    
 
 
 

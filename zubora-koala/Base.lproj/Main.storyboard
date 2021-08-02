@@ -16,7 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sleeping_Koala" translatesAutoresizingMaskIntoConstraints="NO" id="sM7-C2-iQe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="The Forest Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="5K3-og-8nl" userLabel="BG_forest">
+                                <rect key="frame" x="-771" y="-40" width="1675" height="936"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sleeping_Koala" translatesAutoresizingMaskIntoConstraints="NO" id="sM7-C2-iQe">
                                 <rect key="frame" x="87" y="266" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -55,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="115"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="114.50892857142857"/>
         </scene>
         <!--timeConfig-->
         <scene sceneID="8kr-8b-XtD">
@@ -86,6 +90,7 @@
     </scenes>
     <resources>
         <image name="Sleeping_Koala" width="3000" height="3000"/>
+        <image name="The Forest Background.png" width="1920" height="1080"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
