@@ -17,7 +17,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        5秒おきにタイマーテスト
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerTest), userInfo: nil, repeats: true)
+        
         let now = Date()
         let dateFormatter = DateFormatter()
 
@@ -75,8 +78,25 @@ class ViewController: UIViewController {
         self.present(view, animated: true, completion: nil)
     }
     
-
+    
+    @objc func timerTest() {
+        print("test")
+    }
 
 
 }
 
+//タイマーテスト
+
+
+class MainViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+
+    @objc func timerUpdate() {
+        print("update")
+    }
+}
