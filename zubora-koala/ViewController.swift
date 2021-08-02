@@ -25,18 +25,28 @@ class ViewController: UIViewController {
         //print(dateFormatter.string(from: dt))
         //print(dt)
         
+//        let time1 = "\(dateFormatter.string(from: dt))"
+//        print(time1)
         
         
-
-        let time1 = "\(dateFormatter.string(from: dt))"
-        print(time1)
-        //let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
-        let start = "08:45:00"
+//        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
+        
+//        参照
+//        let today : Date = Date()
+//        let yesterday: Date = Date(timeIntervalSinceNow:-60*60*24)
+//
+//        if today.compare(yesterday) == ComparisonResult.orderedDescending {
+//           print("今日は昨日よりも未来")  // 実行される
+//        }
+        
+        let start: Date = Date(timeIntervalSinceNow:-60*60)
         print(start)
-        let end = "23:59:00"
+        
+        let end: Date = Date(timeIntervalSinceNow:+60*60)
         print(end)
 
-        if start <= time1 && time1 <= end {
+//        時間範囲指定
+        if start <= dt && dt <= end {
             print("範囲内です")
             buttonTimeToGive.isHidden = false
         } else {
