@@ -102,10 +102,10 @@ class ViewController: UIViewController {
         // 時間範囲指定
         if start <= now && now <= end {
             // print("範囲内です")
-            buttonTimeToGive.isHidden = false
+            yukarieatButton.isHidden = false
         } else {
             // print("範囲外です")
-            buttonTimeToGive.isHidden = true
+            yukarieatButton.isHidden = true
             if !flag {
                 image = UIImage(named: "angry")
                 koalaImage.image = image
