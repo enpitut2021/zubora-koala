@@ -11,8 +11,8 @@ import Lottie
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var buttonTimeToGive: UIButton!
-    @IBOutlet weak var koalaImage: UIImageView!
+    //@IBOutlet weak var buttonTimeToGive: UIButton!
+    //@IBOutlet weak var koalaImage: UIImageView!
     var image: UIImage!
     
     @IBOutlet weak var plantimg: UIImageView!
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         var view = AnimationView()
         koalaEating(name: "eat_animation", view: view)
+        yukarieatButton.isEnabled = false
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
             self.koalaEating(name: "koala-smiling", view: view)
             Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(self.plantVis), userInfo: nil, repeats: false)
@@ -38,16 +39,15 @@ class ViewController: UIViewController {
 //    }
     
     func koalaEating(name: String, view: AnimationView) -> AnimationView{
-            if  let path: String = Bundle.main.path(forResource: name, ofType: "json")
-            {
-                        print(path)
-                        view.animation = Animation.filepath(path)
-                        view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-                        view.center = self.view.center
-                        view.loopMode = .loop
-                        self.view.addSubview(view)
-                        view.play()
-                    }
+        if  let path: String = Bundle.main.path(forResource: name, ofType: "json") {
+            //print(path)
+            view.animation = Animation.filepath(path)
+            view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+            view.center = self.view.center
+            view.loopMode = .loop
+            self.view.addSubview(view)
+            view.play()
+        }
         return view
     }
     
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         if flag == true {
             let view = AnimationView()
             if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json") {
-                print(path)
+                //print(path)
                 view.animation = Animation.filepath(path)
                 view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
                 view.center = self.view.center
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         } else {
             let view = AnimationView()
             if  let path: String = Bundle.main.path(forResource: "51431-koala-wink", ofType: "json") {
-                print(path)
+                //print(path)
                 view.animation = Animation.filepath(path)
                 view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
                 view.center = self.view.center
@@ -90,10 +90,10 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func clickButton(_ sender: Any) {
-        let view = UIHostingController(rootView: ContentView())
-        self.present(view, animated: true, completion: nil)
-    }
+//    @IBAction func clickButton(_ sender: Any) {
+//        let view = UIHostingController(rootView: ContentView())
+//        self.present(view, animated: true, completion: nil)
+//    }
     
     @objc func timerMainView() {
         
@@ -107,9 +107,11 @@ class ViewController: UIViewController {
         if start <= now && now <= end {
             // print("範囲内です")
             yukarieatButton.isHidden = false
+            plantimg.isHidden = false
         } else {
             // print("範囲外です")
             yukarieatButton.isHidden = true
+            plantimg.isHidden = true
             if !flag {
                 image = UIImage(named: "angry")
                 //koalaImage.image = image

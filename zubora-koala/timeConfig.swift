@@ -32,6 +32,8 @@ class timeConfigController: UIViewController {
         formatter.dateFormat = "HH:mm:ss"
 //        UserDefaults.standard.set(formatter.string(from: pickerConf.date), forKey: "start_time")
         UserDefaults.standard.set(pickerConf.date, forKey: "start_time")
+        let parentViewCon = self.presentingViewController as! ViewController
+        parentViewCon.timerMainView()
         self.dismiss(animated: true, completion: nil)
     }
     
