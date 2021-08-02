@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             buttonTimeToGive.isHidden = false
         } else {
             print("範囲外です")
-            buttonTimeToGive.isHidden = false
+            buttonTimeToGive.isHidden = true
             let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
             if !flag {
                 image = UIImage(named: "angry")
