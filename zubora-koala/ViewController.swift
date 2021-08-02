@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Lottie
 
 class ViewController: UIViewController {
     
@@ -39,18 +40,41 @@ class ViewController: UIViewController {
 //        print(time1)
 //        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
         
-//        参照
-//        let today : Date = Date()
-//        let yesterday: Date = Date(timeIntervalSinceNow:-60*60*24)
-//
-//        if today.compare(yesterday) == ComparisonResult.orderedDescending {
-//           print("今日は昨日よりも未来")  // 実行される
-//        }
+        let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+
+
         
         let start = loadDate(key: "start_time")
         print(start)
         let end: Date = Date(timeInterval: 60*30, since: start)
         print(end)
+        
+        if flag == true{
+        let view = AnimationView()
+                if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json")
+                {
+                            print(path)
+                            view.animation = Animation.filepath(path)
+                            view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                            view.center = self.view.center
+                            view.loopMode = .loop
+                            self.view.addSubview(view)
+                            view.play()
+                        }
+        }else{
+            let view = AnimationView()
+                    if  let path: String = Bundle.main.path(forResource: "51431-koala-wink", ofType: "json")
+                    {
+                                print(path)
+                                view.animation = Animation.filepath(path)
+                                view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                                view.center = self.view.center
+                                view.loopMode = .loop
+                                self.view.addSubview(view)
+                                view.play()
+                    }
+        }
+        
 
 //        時間範囲指定
         if start <= now && now <= end {
@@ -58,8 +82,8 @@ class ViewController: UIViewController {
             buttonTimeToGive.isHidden = false
         } else {
             print("範囲外です")
+
             buttonTimeToGive.isHidden = true
-            let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
             if !flag {
                 image = UIImage(named: "angry")
                 koalaImage.image = image
@@ -72,6 +96,7 @@ class ViewController: UIViewController {
         let view = UIHostingController(rootView: ContentView())
         self.present(view, animated: true, completion: nil)
     }
+    
 
 
 
