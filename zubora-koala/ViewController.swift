@@ -15,6 +15,47 @@ class ViewController: UIViewController {
     @IBOutlet weak var koalaImage: UIImageView!
     var image: UIImage!
     
+    @IBOutlet weak var yukarieatButton: UIButton!
+    
+    @IBAction func yukariEat(_ sender: Any) {
+        //var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+        //var yukariEatingTime: Timer!
+        
+        let view = koalaEating(name: "eat_animation")
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
+            self.koalaEating(name: "koala-smiling")
+        }
+        //flag = true
+    }
+    
+//    @objc private func koalaStopEating(_ view: AnimationView){
+//        view.stop()
+//    }
+    
+    func koalaEating(name: String) -> AnimationView{
+        let view = AnimationView()
+            if  let path: String = Bundle.main.path(forResource: name, ofType: "json")
+            {
+                        print(path)
+                        view.animation = Animation.filepath(path)
+                        view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+                        view.center = self.view.center
+                        view.loopMode = .loop
+                        self.view.addSubview(view)
+                        view.play()
+                    }
+        return view
+    }
+    
+    private func loadDate(key: String) -> Date {
+        let value = UserDefaults.standard.object(forKey: key)
+        guard let date = value as? Date else {
+            // default return
+            return Date()
+        }
+        return date
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +72,7 @@ class ViewController: UIViewController {
         
         let start = loadDate(key: "start_time")
         print(start)
+        
         let end: Date = Date(timeInterval: 60*30, since: start)
         print(end)
         

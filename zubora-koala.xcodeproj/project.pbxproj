@@ -21,6 +21,7 @@
 		697AAFCD26B7772C004FEC5E /* 51431-koala-wink.json in Resources */ = {isa = PBXBuildFile; fileRef = 697AAFCC26B7772C004FEC5E /* 51431-koala-wink.json */; };
 		69D5247E26B780460066D9E8 /* The Forest Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 69D5247D26B780460066D9E8 /* The Forest Background.png */; };
 		E090FB2426B79AC900FEAE37 /* defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E090FB2326B79AC900FEAE37 /* defaults.swift */; };
+		69D5248226B793AD0066D9E8 /* eat_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 69D5248126B793AD0066D9E8 /* eat_animation.json */; };
 		E0AAD7BD26B39B5B00C1DB29 /* timeConfig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0AAD7BC26B39B5B00C1DB29 /* timeConfig.storyboard */; };
 		E0AAD7C126B39D0400C1DB29 /* timeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AAD7C026B39D0400C1DB29 /* timeConfig.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		697AAFCC26B7772C004FEC5E /* 51431-koala-wink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "51431-koala-wink.json"; sourceTree = "<group>"; };
 		69D5247D26B780460066D9E8 /* The Forest Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Forest Background.png"; sourceTree = "<group>"; };
 		E090FB2326B79AC900FEAE37 /* defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaults.swift; sourceTree = "<group>"; };
+		69D5248126B793AD0066D9E8 /* eat_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = eat_animation.json; sourceTree = "<group>"; };
 		E0AAD7BC26B39B5B00C1DB29 /* timeConfig.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = timeConfig.storyboard; sourceTree = "<group>"; };
 		E0AAD7C026B39D0400C1DB29 /* timeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				697AAFCC26B7772C004FEC5E /* 51431-koala-wink.json */,
+				69D5248126B793AD0066D9E8 /* eat_animation.json */,
 				5292AA7426B6B71C0020F8C2 /* koala-smiling.json */,
 			);
 			path = LottieAnimations;
@@ -194,6 +197,7 @@
 				5292AA7826B6B9D10020F8C2 /* koala-smiling.json in Resources */,
 				5292AA7626B6B7A70020F8C2 /* Assets.xcassets.xcassets in Resources */,
 				69D5247E26B780460066D9E8 /* The Forest Background.png in Resources */,
+				69D5248226B793AD0066D9E8 /* eat_animation.json in Resources */,
 				527F8E8226B2C006003D7D83 /* LaunchScreen.storyboard in Resources */,
 				E0AAD7BD26B39B5B00C1DB29 /* timeConfig.storyboard in Resources */,
 				697AAFCD26B7772C004FEC5E /* 51431-koala-wink.json in Resources */,
