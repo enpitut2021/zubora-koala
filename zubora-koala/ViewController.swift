@@ -19,20 +19,25 @@ class ViewController: UIViewController {
     
     @IBAction func yukariEat(_ sender: Any) {
         var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+        var yukariEatingTime: Timer!
+        
+        koalaEating()
+        flag = true
+    }
+    
+    func koalaEating(){
         let view = AnimationView()
                 if  let path: String = Bundle.main.path(forResource: "eat_animation", ofType: "json")
                 {
                             print(path)
                             view.animation = Animation.filepath(path)
-                            view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                            view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
                             view.center = self.view.center
                             view.loopMode = .loop
                             self.view.addSubview(view)
                             view.play()
                         }
-        flag = true
     }
-    
     
     private func loadDate(key: String) -> Date {
         let value = UserDefaults.standard.object(forKey: key)
@@ -73,7 +78,7 @@ class ViewController: UIViewController {
                 {
                             print(path)
                             view.animation = Animation.filepath(path)
-                            view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                            view.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
                             view.center = self.view.center
                             view.loopMode = .loop
                             self.view.addSubview(view)
@@ -85,7 +90,7 @@ class ViewController: UIViewController {
                     {
                                 print(path)
                                 view.animation = Animation.filepath(path)
-                                view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                                view.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
                                 view.center = self.view.center
                                 view.loopMode = .loop
                                 self.view.addSubview(view)
