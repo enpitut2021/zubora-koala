@@ -18,25 +18,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var yukarieatButton: UIButton!
     
     @IBAction func yukariEat(_ sender: Any) {
-        var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
-        var yukariEatingTime: Timer!
+        //var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+        //var yukariEatingTime: Timer!
         
-        koalaEating()
-        flag = true
+        let view = koalaEating()
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
+            view.stop()
+        }
+        //flag = true
     }
     
-    func koalaEating(){
+//    @objc private func koalaStopEating(_ view: AnimationView){
+//        view.stop()
+//    }
+    
+    func koalaEating() -> AnimationView{
         let view = AnimationView()
-                if  let path: String = Bundle.main.path(forResource: "eat_animation", ofType: "json")
-                {
-                            print(path)
-                            view.animation = Animation.filepath(path)
-                            view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-                            view.center = self.view.center
-                            view.loopMode = .loop
-                            self.view.addSubview(view)
-                            view.play()
-                        }
+            if  let path: String = Bundle.main.path(forResource: "eat_animation", ofType: "json")
+            {
+                        print(path)
+                        view.animation = Animation.filepath(path)
+                        view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+                        view.center = self.view.center
+                        view.loopMode = .loop
+                        self.view.addSubview(view)
+                        view.play()
+                    }
+        return view
     }
     
     private func loadDate(key: String) -> Date {
