@@ -37,8 +37,6 @@ class ViewController: UIViewController {
         
 //        let time1 = "\(dateFormatter.string(from: dt))"
 //        print(time1)
-        
-        
 //        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
         
 //        参照
@@ -50,11 +48,8 @@ class ViewController: UIViewController {
 //        }
         
         let start = loadDate(key: "start_time")
-        
-//        let start: Date = Date(timeIntervalSinceNow:-60*60)
         print(start)
-        
-        let end: Date = Date(timeIntervalSinceNow:+60*60)
+        let end: Date = Date(timeInterval: 60*30, since: start)
         print(end)
 
 //        時間範囲指定
