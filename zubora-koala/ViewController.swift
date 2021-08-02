@@ -15,10 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var koalaImage: UIImageView!
     var image: UIImage!
     
+    
+    private func loadDate(key: String) -> Date {
+        let value = UserDefaults.standard.object(forKey: key)
+        guard let date = value as? Date else {
+            // default return
+            return Date()
+        }
+        return date
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let dt = Date()
+        let now = Date()
         let dateFormatter = DateFormatter()
 
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm:ss", options: 0, locale: Locale(identifier: "ja_JP"))
@@ -26,15 +36,17 @@ class ViewController: UIViewController {
         //print(dateFormatter.string(from: dt))
         //print(dt)
         
+//        let time1 = "\(dateFormatter.string(from: dt))"
+//        print(time1)
+//        let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
         
         let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
 
-        let time1 = "\(dateFormatter.string(from: dt))"
-        print(time1)
-        //let start = "\(UserDefaults.standard.string(forKey: "start_time") ?? "01:00:00")"
-        let start = "08:45:00"
+
+        
+        let start = loadDate(key: "start_time")
         print(start)
-        let end = "23:59:00"
+        let end: Date = Date(timeInterval: 60*30, since: start)
         print(end)
         
         if flag == true{
@@ -64,13 +76,14 @@ class ViewController: UIViewController {
         }
         
 
-        if start <= time1 && time1 <= end {
+//        時間範囲指定
+        if start <= now && now <= end {
             print("範囲内です")
             buttonTimeToGive.isHidden = false
         } else {
             print("範囲外です")
-            buttonTimeToGive.isHidden = false
-           
+
+            buttonTimeToGive.isHidden = true
             if !flag {
                 image = UIImage(named: "angry")
                 koalaImage.image = image

@@ -27,7 +27,8 @@ class timeConfigController: UIViewController {
     @IBAction func clicked_button(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
-        UserDefaults.standard.set(formatter.string(from: pickerConf.date), forKey: "start_time")
+//        UserDefaults.standard.set(formatter.string(from: pickerConf.date), forKey: "start_time")
+        UserDefaults.standard.set(pickerConf.date, forKey: "start_time")
     }
     
 }
