@@ -28,16 +28,12 @@
                                     <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eit-3Q-sRf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-bd-DJu">
-                                <rect key="frame" x="176" y="540" width="62" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plant.png" translatesAutoresizingMaskIntoConstraints="NO" id="YzM-BG-TQa">
+                                <rect key="frame" x="70" y="591" width="275" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="時間設定"/>
-                                <connections>
-                                    <segue destination="AhW-xJ-9cB" kind="show" id="31A-y9-mCs"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCV-jG-BGI">
-                                <rect key="frame" x="153" y="654" width="108" height="30"/>
+                                <rect key="frame" x="161" y="795" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="アニメーション"/>
                                 <connections>
@@ -45,11 +41,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44H-Wk-kDi" userLabel="yukarieatB">
-                                <rect key="frame" x="146" y="598" width="123" height="30"/>
+                                <rect key="frame" x="146" y="612" width="123" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ユーカリをあげる"/>
                                 <connections>
                                     <action selector="yukariEat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Muj-s5-wRy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-bd-DJu">
+                                <rect key="frame" x="199" y="94" width="275" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="時間設定" image="timesetting.png"/>
+                                <connections>
+                                    <segue destination="AhW-xJ-9cB" kind="show" id="31A-y9-mCs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,6 +61,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonTimeToGive" destination="5b2-68-mlb" id="AYM-jb-Ixt"/>
+                        <outlet property="plantimg" destination="YzM-BG-TQa" id="l7a-Md-Gi0"/>
                         <outlet property="yukarieatButton" destination="44H-Wk-kDi" id="nEI-U6-Xbc"/>
                     </connections>
                 </viewController>
@@ -94,6 +98,8 @@
     </scenes>
     <resources>
         <image name="The Forest Background.png" width="1920" height="1080"/>
+        <image name="plant.png" width="491.51998901367188" height="491.51998901367188"/>
+        <image name="timesetting.png" width="201" height="63"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var koalaImage: UIImageView!
     var image: UIImage!
     
+    @IBOutlet weak var plantimg: UIImageView!
     @IBOutlet weak var yukarieatButton: UIButton!
     
     @IBAction func yukariEat(_ sender: Any) {
@@ -25,7 +26,11 @@ class ViewController: UIViewController {
         koalaEating(name: "eat_animation", view: view)
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
             self.koalaEating(name: "koala-smiling", view: view)
+            Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(self.plantVis), userInfo: nil, repeats: false)
         }
+    }
+    @objc func plantVis() {
+        plantimg.isHidden = true
     }
     
 //    @objc private func koalaStopEating(_ view: AnimationView){
@@ -109,7 +114,7 @@ class ViewController: UIViewController {
             buttonTimeToGive.isHidden = true
             if !flag {
                 image = UIImage(named: "angry")
-                koalaImage.image = image
+                //koalaImage.image = image
             }
         }
         
