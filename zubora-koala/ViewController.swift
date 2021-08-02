@@ -14,10 +14,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var koalaImage: UIImageView!
     var image: UIImage!
     
+    
+    private func loadDate(key: String) -> Date {
+        let value = UserDefaults.standard.object(forKey: key)
+        guard let date = value as? Date else {
+            // default return
+            return Date()
+        }
+        return date
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let dt = Date()
+        let now = Date()
         let dateFormatter = DateFormatter()
 
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm:ss", options: 0, locale: Locale(identifier: "ja_JP"))
@@ -39,14 +49,16 @@ class ViewController: UIViewController {
 //           print("今日は昨日よりも未来")  // 実行される
 //        }
         
-        let start: Date = Date(timeIntervalSinceNow:-60*60)
+        let start = loadDate(key: "start_time")
+        
+//        let start: Date = Date(timeIntervalSinceNow:-60*60)
         print(start)
         
         let end: Date = Date(timeIntervalSinceNow:+60*60)
         print(end)
 
 //        時間範囲指定
-        if start <= dt && dt <= end {
+        if start <= now && now <= end {
             print("範囲内です")
             buttonTimeToGive.isHidden = false
         } else {
