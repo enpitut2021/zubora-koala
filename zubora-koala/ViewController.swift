@@ -21,24 +21,23 @@ class ViewController: UIViewController {
         //var flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
         //var yukariEatingTime: Timer!
         
-        let view = koalaEating(name: "eat_animation")
+        var view = AnimationView()
+        koalaEating(name: "eat_animation", view: view)
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
-            self.koalaEating(name: "koala-smiling")
+            self.koalaEating(name: "koala-smiling", view: view)
         }
-        //flag = true
     }
     
 //    @objc private func koalaStopEating(_ view: AnimationView){
 //        view.stop()
 //    }
     
-    func koalaEating(name: String) -> AnimationView{
-        let view = AnimationView()
+    func koalaEating(name: String, view: AnimationView) -> AnimationView{
             if  let path: String = Bundle.main.path(forResource: name, ofType: "json")
             {
                         print(path)
                         view.animation = Animation.filepath(path)
-                        view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+                        view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
                         view.center = self.view.center
                         view.loopMode = .loop
                         self.view.addSubview(view)

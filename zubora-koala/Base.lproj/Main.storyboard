@@ -20,10 +20,6 @@
                                 <rect key="frame" x="-771" y="-40" width="1675" height="936"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sleeping_Koala" translatesAutoresizingMaskIntoConstraints="NO" id="sM7-C2-iQe">
-                                <rect key="frame" x="87" y="266" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b2-68-mlb">
                                 <rect key="frame" x="108" y="433" width="199" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,7 +58,6 @@
                     </view>
                     <connections>
                         <outlet property="buttonTimeToGive" destination="5b2-68-mlb" id="AYM-jb-Ixt"/>
-                        <outlet property="koalaImage" destination="sM7-C2-iQe" id="3JB-hI-Ui1"/>
                         <outlet property="yukarieatButton" destination="44H-Wk-kDi" id="nEI-U6-Xbc"/>
                     </connections>
                 </viewController>
@@ -98,7 +93,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sleeping_Koala" width="3000" height="3000"/>
         <image name="The Forest Background.png" width="1920" height="1080"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
