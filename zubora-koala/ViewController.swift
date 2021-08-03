@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         
         let now = Date()
         let start = loadDate(key: "start_time")
-        let end = Date(timeInterval: 60*30, since: start)
+        let end = Date(timeInterval: 60*10, since: start)
         print(now)
         print(start)
         print(end)
