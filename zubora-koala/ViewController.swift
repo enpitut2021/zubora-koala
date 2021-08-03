@@ -28,21 +28,19 @@ class AnimationControl {
     }
     
     func set (view: UIView) {
-        let p: String? = Bundle.main.path (forResource: path, ofType: "json")
-        if p != nil {
-            sub.animation = Animation.filepath(p!)
-            sub.frame = CGRect(x: 0, y: 0, width: size, height: size)
-            sub.center = view.center
-            sub.loopMode = .loop
-        } else {
-            print("not found")
-        }
-        
-//        if path != pathPrev {
+        if path != pathPrev {
+            let p: String? = Bundle.main.path (forResource: path, ofType: "json")
+            if p != nil {
+                sub.animation = Animation.filepath(p!)
+                sub.frame = CGRect(x: 0, y: 0, width: size, height: size)
+                sub.center = view.center
+                sub.loopMode = .loop
+            } else {
+                print("not found")
+            }
             pathPrev = path
             play(view: view)
-//        }
-        
+        }
 //        print(path)
 //        print(pathPrev)
     }
