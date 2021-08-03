@@ -32,9 +32,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-bd-DJu">
-                                <rect key="frame" x="199" y="94" width="275" height="63"/>
+                                <rect key="frame" x="189" y="91" width="156" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="時間設定" image="timesetting.png"/>
+                                <state key="normal" image="time_set_icon.png"/>
                                 <connections>
                                     <segue destination="AhW-xJ-9cB" kind="show" id="31A-y9-mCs"/>
                                 </connections>
@@ -82,7 +82,7 @@
     <resources>
         <image name="The Forest Background.png" width="1920" height="1080"/>
         <image name="plant.png" width="491.51998901367188" height="491.51998901367188"/>
-        <image name="timesetting.png" width="201" height="63"/>
+        <image name="time_set_icon.png" width="156" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
