@@ -111,7 +111,7 @@ class ViewController: UIViewController {
                 yukarieatButton.isHidden = true
                 plantimg.isHidden = true
                 // 悲しい顔に変更する
-                if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json") {
+                if  let path: String = Bundle.main.path(forResource: "sad_koala", ofType: "json") {
                     //print(path)
                     self.viewMain.animation = Animation.filepath(path)
                     self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
