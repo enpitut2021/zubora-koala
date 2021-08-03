@@ -62,22 +62,6 @@
             </objects>
             <point key="canvasLocation" x="850" y="80"/>
         </scene>
-        <!--Animation-->
-        <scene sceneID="euu-Sk-xh8">
-            <objects>
-                <viewController id="ydr-BG-FXL" customClass="animation" customModule="zubora_koala" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="30f-YC-ykD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Eh2-qL-f32"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="1dx-Hj-5mK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jux-et-ZKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="806" y="577"/>
-        </scene>
     </scenes>
     <resources>
         <image name="The Forest Background.png" width="1920" height="1080"/>
