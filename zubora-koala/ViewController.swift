@@ -90,6 +90,7 @@ class ViewController: UIViewController {
         print(start)
 //        print(isYukariGiven)
         if now >= after12h {
+            // その日にする
             let nextstart = Date(timeInterval: 60*60*24, since: start)
             UserDefaults.standard.set(false, forKey: "isYukariGiven")
             UserDefaults.standard.set(nextstart, forKey: "start_time")

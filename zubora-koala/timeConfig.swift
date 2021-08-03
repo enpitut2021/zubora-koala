@@ -43,4 +43,6 @@ class timeConfigController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // タイムピッカーの日付狭める
+    
 }
