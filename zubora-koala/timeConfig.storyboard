@@ -38,10 +38,11 @@
                                     <action selector="pickerChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="lsu-tm-7FG"/>
                                 </connections>
                             </datePicker>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Sx-TaR">
-                                <rect key="frame" x="176" y="538" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Sx-TaR">
+                                <rect key="frame" x="138" y="740" width="138" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="リセット"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <state key="normal" title="リセット（開発用）"/>
                                 <connections>
                                     <action selector="resetButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KNx-S2-Dg0"/>
                                     <action selector="reset_yukariGiven:" destination="Toa-m2-r6L" eventType="touchUpInside" id="aWN-Yy-XIa"/>
@@ -64,6 +65,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

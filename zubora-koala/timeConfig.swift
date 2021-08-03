@@ -20,8 +20,12 @@ class timeConfigController: UIViewController {
     }
       
     @IBAction func resetButton(_ sender: Any) {
-            UserDefaults.standard.set(false, forKey: "isYukariGiven")
-        }
+        UserDefaults.standard.set(Date(), forKey: "start_time")
+        UserDefaults.standard.set(false, forKey: "isYukariGiven")
+        let parentViewCon = self.presentingViewController as! ViewController
+        parentViewCon.timerMainView()
+        self.dismiss(animated: true, completion: nil)
+}
     
     
     override func viewDidLoad() {
