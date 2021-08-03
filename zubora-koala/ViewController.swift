@@ -17,23 +17,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var yukarieatButton: UIButton!
     
     @IBAction func yukariEat(_ sender: Any) {
-        koalaEating(name: "eat_animation", view: self.viewMain)
+        self.koala_face_settings(name: "eat_animation")
+        self.koala_face_draw()
         yukarieatButton.isEnabled = false
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
         }
     }
     
-    func koalaEating(name: String, view: AnimationView) -> AnimationView{
+    //アニメーション設定
+    //まずはself.koala_face_settings(name: "ファイル名")で設定して下さい。
+    func koala_face_settings(name: String) -> Void{
         if  let path: String = Bundle.main.path(forResource: name, ofType: "json") {
             //print(path)
-            view.animation = Animation.filepath(path)
-            view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-            view.center = self.view.center
-            view.loopMode = .loop
-            self.view.addSubview(view)
-            view.play()
+            self.viewMain.animation = Animation.filepath(path)
+            self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+            self.viewMain.center = self.view.center
+            self.viewMain.loopMode = .loop
         }
-        return view
+    }
+    
+    //アニメーション再生
+    //koala_face_settingでファイル名を指定した後、このメソッドを実行してください。
+    func koala_face_draw() {
+        self.view.addSubview(self.viewMain)
+        self.viewMain.play()
     }
     
     var timerMain: Timer?
