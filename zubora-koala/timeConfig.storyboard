@@ -38,6 +38,15 @@
                                     <action selector="pickerChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="lsu-tm-7FG"/>
                                 </connections>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Sx-TaR">
+                                <rect key="frame" x="176" y="538" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="リセット"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KNx-S2-Dg0"/>
+                                    <action selector="reset_yukariGiven:" destination="Toa-m2-r6L" eventType="touchUpInside" id="aWN-Yy-XIa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -45,9 +54,11 @@
                     <connections>
                         <outlet property="button_done" destination="5EZ-qb-Rvc" id="Rfh-gW-2R0"/>
                         <outlet property="pickerConf" destination="wZd-Cs-dDG" id="hks-1y-Ux1"/>
+                        <outlet property="resetButton" destination="THc-Sx-TaR" id="YEa-OM-MUJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Toa-m2-r6L" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="71.014492753623188" y="137.94642857142856"/>
         </scene>

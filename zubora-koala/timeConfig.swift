@@ -13,11 +13,17 @@ class timeConfigController: UIViewController {
     @IBOutlet var button_done: UIView!
     
     // PickerOnly
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var pickerConf: UIDatePicker!
     @IBAction func pickerChanged(_ sender: Any) {
 
     }
       
+    @IBAction func resetButton(_ sender: Any) {
+            UserDefaults.standard.set(false, forKey: "isYukariGiven")
+        }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        1スタートタイムの値を初期値にする

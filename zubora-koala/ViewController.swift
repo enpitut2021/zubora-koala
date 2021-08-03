@@ -19,9 +19,13 @@ class ViewController: UIViewController {
     @IBAction func yukariEat(_ sender: Any) {
         koalaEating(name: "eat_animation", view: self.viewMain)
         yukarieatButton.isEnabled = false
+        UserDefaults.standard.set(true, forKey: "isYukariGiven")
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
         }
     }
+
+    
+    
     
     func koalaEating(name: String, view: AnimationView) -> AnimationView{
         if  let path: String = Bundle.main.path(forResource: name, ofType: "json") {
@@ -49,30 +53,16 @@ class ViewController: UIViewController {
     
     @objc func timerMainView(view: AnimationView) {
         
-        let flag = UserDefaults.standard.bool(forKey: "isWaterGiven")
+        let isYukariGiven = UserDefaults.standard.bool(forKey: "isYukariGiven")
         
         let now = Date()
         let start = loadDate(key: "start_time")
         let end = Date(timeInterval: 60*30, since: start)
-        
-        // 時間範囲指定
-        if start <= now && now <= end {
-            // print("範囲内です")
-            yukarieatButton.isHidden = false
-            plantimg.isHidden = false
-        } else {
-            // print("範囲外です")
-            yukarieatButton.isHidden = true
-            plantimg.isHidden = true
-            if !flag {
-                image = UIImage(named: "angry")
-                //koalaImage.image = image
-            }
-        }
-        
-        
-        // この処理の目的しりたい
-        if flag == true {
+        print(now)
+        print(start)
+        print(end)
+        print(isYukariGiven)
+        if isYukariGiven == true {
 
             yukarieatButton.isHidden = true
             plantimg.isHidden = true
