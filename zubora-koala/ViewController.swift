@@ -9,9 +9,51 @@ import UIKit
 import SwiftUI
 import Lottie
 
+
+//
+// ** usage **
+// var viewABC = AnimationControl()  // 初期化
+// viewABC.path = "filename"  // ファイル名変更
+// viewABC.set(view: view)  // ViewControllerのviewを渡して再生
+//
+class AnimationControl {
+    let sub: AnimationView
+    var path: String?
+    var pathPrev: String?
+    var size: Int
+    
+    init() {
+        sub = AnimationView()
+        size = 300
+    }
+    
+    func set (view: UIView) {
+        let p: String? = Bundle.main.path (forResource: path, ofType: "json")
+        if p != nil {
+            sub.animation = Animation.filepath(p!)
+            sub.frame = CGRect(x: 0, y: 0, width: size, height: size)
+            sub.center = view.center
+            sub.loopMode = .loop
+        } else {
+            print("not found")
+        }
+        
+        if path != pathPrev {
+            pathPrev = path
+            play(view: view)
+        }
+    }
+    
+    func play(view: UIView) {
+        view.addSubview(self.sub)
+        self.sub.play()
+    }
+}
+
 class ViewController: UIViewController {
     var image: UIImage!
     var viewMain: AnimationView = AnimationView()
+    var tempview = AnimationControl()
     
     @IBOutlet weak var plantimg: UIImageView!
     @IBOutlet weak var yukarieatButton: UIButton!
@@ -24,9 +66,6 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
         }
     }
-
-    
-    
     
     //アニメーション設定
     //まずはself.koala_face_settings(name: "ファイル名")で設定して下さい。
@@ -53,6 +92,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tempview.path = "eat_animation"
+        tempview.set(view: view)
+        
         // timerTest() を5秒おきに呼び出す登録
         self.timerMain = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerMainView(view:)), userInfo: nil, repeats: true)
     }
@@ -65,10 +107,10 @@ class ViewController: UIViewController {
         let now = Date()
         let start = loadDate(key: "start_time")
         let end = Date(timeInterval: 60*30, since: start)
-        print(now)
-        print(start)
-        print(end)
-        print(isYukariGiven)
+        //print(now)
+        //print(start)
+        //print(end)
+        //print(isYukariGiven)
         if isYukariGiven == true {
 
             yukarieatButton.isHidden = true
