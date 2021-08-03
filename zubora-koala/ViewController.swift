@@ -81,15 +81,19 @@ class ViewController: UIViewController {
     
     @objc func timerMainView() {
         
-        let isYukariGiven = UserDefaults.standard.bool(forKey: "isYukariGiven")
-        
         let now = Date()
         let start = loadDate(key: "start_time")
-        let end = Date(timeInterval: 60*30, since: start)
+        let end = Date(timeInterval: 60*10, since: start)
+        let after12h = Date(timeInterval: 60*60*12, since: start)
         //print(now)
         //print(start)
         //print(end)
         //print(isYukariGiven)
+        if now >= after12h {
+            start = Date(timeInterval: 60*60*24, since: start)
+            UserDefaults.standard.set(false, forKey: "isYukariGiven")
+        }
+        let isYukariGiven = UserDefaults.standard.bool(forKey: "isYukariGiven")
         if isYukariGiven == true {
 
             yukarieatButton.isHidden = true
