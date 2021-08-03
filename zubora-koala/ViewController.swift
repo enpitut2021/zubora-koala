@@ -38,10 +38,13 @@ class AnimationControl {
             print("not found")
         }
         
-        if path != pathPrev {
+//        if path != pathPrev {
             pathPrev = path
             play(view: view)
-        }
+//        }
+        
+//        print(path)
+//        print(pathPrev)
     }
     
     func play(view: UIView) {
@@ -50,57 +53,33 @@ class AnimationControl {
     }
 }
 
+
 class ViewController: UIViewController {
     var image: UIImage!
-    var viewMain: AnimationView = AnimationView()
-    var tempview = AnimationControl()
+    var viewSub = AnimationControl()
+    var timerMain: Timer?
     
     @IBOutlet weak var plantimg: UIImageView!
     @IBOutlet weak var yukarieatButton: UIButton!
     
     @IBAction func yukariEat(_ sender: Any) {
-        self.koala_face_settings(name: "eat_animation")
-        self.koala_face_draw()
+        viewSub.path = "eat_animation"
+        viewSub.set(view: view)
         yukarieatButton.isEnabled = false
         UserDefaults.standard.set(true, forKey: "isYukariGiven")
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {_ in
         }
     }
     
-    //アニメーション設定
-    //まずはself.koala_face_settings(name: "ファイル名")で設定して下さい。
-    func koala_face_settings(name: String) -> Void{
-        if  let path: String = Bundle.main.path(forResource: name, ofType: "json") {
-            //print(path)
-            self.viewMain.animation = Animation.filepath(path)
-            self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-            self.viewMain.center = self.view.center
-            self.viewMain.loopMode = .loop
-        }
-    }
-    
-    //アニメーション再生
-    //koala_face_settingでファイル名を指定した後、このメソッドを実行してください。
-    func koala_face_draw() {
-        self.view.addSubview(self.viewMain)
-        self.viewMain.play()
-    }
-    
-    var timerMain: Timer?
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tempview.path = "eat_animation"
-        tempview.set(view: view)
-        
         // timerTest() を5秒おきに呼び出す登録
-        self.timerMain = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerMainView(view:)), userInfo: nil, repeats: true)
+        self.timerMain = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerMainView), userInfo: nil, repeats: true)
     }
 
     
-    @objc func timerMainView(view: AnimationView) {
+    @objc func timerMainView() {
         
         let isYukariGiven = UserDefaults.standard.bool(forKey: "isYukariGiven")
         
@@ -115,29 +94,15 @@ class ViewController: UIViewController {
 
             yukarieatButton.isHidden = true
             plantimg.isHidden = true
+            
+            viewSub.path = "koala-smiling"
+            viewSub.set(view: view)
 
-            if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json") {
-                //print(path)
-                self.viewMain.animation = Animation.filepath(path)
-                self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-                self.viewMain.center = self.view.center
-                self.viewMain.loopMode = .loop
-                self.view.addSubview(self.viewMain)
-                self.viewMain.play()
-            }
         } else {
             if now <= end {
                 // print("範囲内です")
-                
-                if  let path: String = Bundle.main.path(forResource: "51431-koala-wink", ofType: "json") {
-                    //print(path)
-                    self.viewMain.animation = Animation.filepath(path)
-                    self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-                    self.viewMain.center = self.view.center
-                    self.viewMain.loopMode = .loop
-                    self.view.addSubview(self.viewMain)
-                    self.viewMain.play()
-                }
+                viewSub.path = "51431-koala-wink"
+                viewSub.set(view: view)
                 if start <= now {
                     yukarieatButton.isHidden = false
                     plantimg.isHidden = false
@@ -150,15 +115,8 @@ class ViewController: UIViewController {
                 yukarieatButton.isHidden = true
                 plantimg.isHidden = true
                 // 悲しい顔に変更する
-                if  let path: String = Bundle.main.path(forResource: "sad_koala", ofType: "json") {
-                    //print(path)
-                    self.viewMain.animation = Animation.filepath(path)
-                    self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-                    self.viewMain.center = self.view.center
-                    self.viewMain.loopMode = .loop
-                    self.view.addSubview(self.viewMain)
-                    self.viewMain.play()
-                }
+                viewSub.path = "sad_koala"
+                viewSub.set(view: view)
             }
         }
     }
