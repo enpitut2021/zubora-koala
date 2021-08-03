@@ -74,6 +74,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.timerMainView()
         // timerTest() を5秒おきに呼び出す登録
         self.timerMain = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerMainView), userInfo: nil, repeats: true)
     }
@@ -87,13 +88,12 @@ class ViewController: UIViewController {
         let after12h = Date(timeInterval: 60*60*12, since: start)
         print(now)
         print(start)
-        print(end)
 //        print(isYukariGiven)
         if now >= after12h {
             let nextstart = Date(timeInterval: 60*60*24, since: start)
             UserDefaults.standard.set(false, forKey: "isYukariGiven")
             UserDefaults.standard.set(nextstart, forKey: "start_time")
-            self.timerMainView()
+//            self.timerMainView()
         }
         let isYukariGiven = UserDefaults.standard.bool(forKey: "isYukariGiven")
         if isYukariGiven == true {
