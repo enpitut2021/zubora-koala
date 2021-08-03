@@ -73,6 +73,10 @@ class ViewController: UIViewController {
         
         // この処理の目的しりたい
         if flag == true {
+
+            yukarieatButton.isHidden = true
+            plantimg.isHidden = true
+
             if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json") {
                 //print(path)
                 self.viewMain.animation = Animation.filepath(path)
@@ -83,14 +87,39 @@ class ViewController: UIViewController {
                 self.viewMain.play()
             }
         } else {
-            if  let path: String = Bundle.main.path(forResource: "51431-koala-wink", ofType: "json") {
-                //print(path)
-                self.viewMain.animation = Animation.filepath(path)
-                self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-                self.viewMain.center = self.view.center
-                self.viewMain.loopMode = .loop
-                self.view.addSubview(self.viewMain)
-                self.viewMain.play()
+            if now <= end {
+                // print("範囲内です")
+                
+                if  let path: String = Bundle.main.path(forResource: "51431-koala-wink", ofType: "json") {
+                    //print(path)
+                    self.viewMain.animation = Animation.filepath(path)
+                    self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+                    self.viewMain.center = self.view.center
+                    self.viewMain.loopMode = .loop
+                    self.view.addSubview(self.viewMain)
+                    self.viewMain.play()
+                }
+                if start <= now {
+                    yukarieatButton.isHidden = false
+                    plantimg.isHidden = false
+                } else {
+                    yukarieatButton.isHidden = true
+                    plantimg.isHidden = true
+                }
+            } else {
+                // print("範囲外です")
+                yukarieatButton.isHidden = true
+                plantimg.isHidden = true
+                // 悲しい顔に変更する
+                if  let path: String = Bundle.main.path(forResource: "koala-smiling", ofType: "json") {
+                    //print(path)
+                    self.viewMain.animation = Animation.filepath(path)
+                    self.viewMain.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+                    self.viewMain.center = self.view.center
+                    self.viewMain.loopMode = .loop
+                    self.view.addSubview(self.viewMain)
+                    self.viewMain.play()
+                }
             }
         }
     }
