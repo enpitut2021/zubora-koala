@@ -84,8 +84,8 @@ class ViewController: UIViewController {
         let start = loadDate(key: "start_time")
         let end = Date(timeInterval: 60*10, since: start)
         let after12h = Date(timeInterval: 60*60*12, since: start)
-        print(now)
-        print(start)
+//        print(now)
+//        print(start)
 //        print(isYukariGiven)
         if now >= after12h {
             // その日にする
